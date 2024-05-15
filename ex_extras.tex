@@ -1,0 +1,49 @@
+\section{Exercícios extras}
+
+\subsection{E1}
+\textbf{Enunciado:} \par
+Considere a função custo/objetivo dada na equação $E(\textbf{w})=\frac{1}{2}\sum_{n=1}^{N} \{y(x_n,w)-t_n\}^2$ em que y está definido na equação $y(x,\boldsymbol{w}) = \sum_{j=0}^{M} w_jx^j$. Mostre que $E(\textbf{w})=\frac{1}{2}\sum_{n=1}^{N} \{y(x_n,w)-t_n\}^2$ pode ser escrito como
+\begin{center}
+    \begin{tabular}{l}
+        $E(\boldsymbol{w}) = \frac{1}{2}||\boldsymbol{y}-\boldsymbol{t}||^2_2$  \\
+        onde \\
+        $\boldsymbol{y} = [y(x_1,\boldsymbol{w})...y(x_N,\boldsymbol{w})]^T$\\
+        $\boldsymbol{t}=[t_1...t_N]^T$\\
+        $\boldsymbol{y} = \boldsymbol{A} \boldsymbol{w}$
+    \end{tabular}       
+\end{center}
+Determine as dimensões e os elementos (também chamados de entradas) da matriz $\boldsymbol{A}$. Mostre que o vetor de coeficientes que minimiza esta função objetivo pode ser escrito como
+\begin{equation*}
+    \boldsymbol{w}^{*} = \boldsymbol{A}^\dagger\ = (\boldsymbol{A}^T\boldsymbol{A})^{-1}\boldsymbol{A}^T\boldsymbol{t}.
+\end{equation*}
+Compare com o exercício 1.1 e note a vantagem de se usar Álgebra Linear para trabalhar com uma notação mais compacta.
+\newline \par
+\textbf{Solução:}
+
+\subsection{E2}
+\textbf{Enunciado:} \par
+Mesma ideia de E1, porém agora considerandando a função objetivo dada na equação $\tilde{E}(\textbf{w})=\frac{1}{2}\sum_{n=1}^{N} \{y(x_n,w)-t_n\}^2-\frac{\lambda}{2}||\boldsymbol{w}||^2$ do livro. Escrevê-la de forma matricial. Encontre o vetor de coeficientes ótimos (em fórmula fechada).
+\newline \par
+\textbf{Solução:}
+
+\subsection{E3 (Exercício Computacional)}
+\textbf{Enunciado:} \par
+Replique o experimento computacional denominado “Polynomial Curve Fitting” usado diversas vezes no livro texto (veja páginas 4 e 5 do livro, bem como Apêndice A).
+Faça:
+\begin{itemize}
+
+    \item Replique os resultados da Figura 1.4 e da Figura 1.6 para validar seu código (i.e., ter certeza de que ele está funcionando adequadamente);
+    
+    \item Simule uma base de dados que não tenha relevância estatística, isto é, que seja uma amostra que NÃO representa bem o todo (a população). Verifique alguns resultados experimentais para     compreender a importância de ter uma amostra relevante. Explique qual a relação entre o caso simulado e casos práticos envolvendo vetores de dimensão elevada.
+    
+    \textbf{Dica:} Para a simulação, ao invés de pegar dados igualmente espaçados no intervalo [0,1], você pode forçar com que seus dados sejam amostrados apenas do semiciclo positivo (ou apenas do negativo) do modelo gerador.
+
+    \item Simule uma base de dados em que 1 dos dados seja outlier. O que ocorre com a curva vermelha, estimativa da curva verde (modelo gerador), neste caso?
+    
+    \textbf{Dica:} Para a simulação, você pode gerar seus dados de treinamento normalmente, igual feito no item (a), e ao final do processo escolher 1 desses dados pra atribuir um novo valor de target que seja completamente “maluco” (por exemplo, target = 10).
+\end{itemize}
+$ $ 
+\newline \par
+\textbf{Solução:}
+
+Testando

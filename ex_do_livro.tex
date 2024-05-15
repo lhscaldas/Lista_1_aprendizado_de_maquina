@@ -1,0 +1,347 @@
+\section*{Exercícios do Bishop}
+
+\begin{enumerate}
+
+
+\item \textbf{Exercício 1.1} \par
+
+Considere a função de erro da soma dos quadrados dada por $E(\boldsymbol{w})=\frac{1}{2}\sum_{n=1}^{N} \{y(x_n,w)-t_n\}^2$, na qual a função $y(x,\boldsymbol{w})$ é dada pelo polinômio $y(x,\boldsymbol{w})=\sum_{j=0}^{M} w_jx^j$. Mostre que os coeficientes $\boldsymbol{w} = \{w_i\}$ que minimizam essa função de erro são dados pela solução do seguinte conjunto de equações lineares:
+\begin{equation*}
+    \sum_{j=0}^{M}A_{ij} w_j = T_i, 
+\end{equation*}
+onde 
+\begin{equation*}
+    A_{ij} = \sum_{n=1}^{N} (x_n)^{i+j} \quad \text{e} \quad T_i=\sum_{n=1}^{N} (x_n)^i t_n.
+\end{equation*}
+Aqui os sufixos $i$ e $j$ denotam os índices de um componente, onde $(x)^i$ denota $x$ elevado a $i$-ésima potência.
+\newline \par
+\textbf{Solução:}
+
+\begin{tabular}{l}
+\\
+$\frac{\partial E(\boldsymbol{w})}{\partial w_i} = \sum_{n=1}^{N} \{y(x_n, \boldsymbol{w}) - t_n\} \frac{\partial y(x_n, \boldsymbol{w})}{\partial w_i}$ \\
+\\
+Se $y(x,\boldsymbol{w})=\sum_{j=0}^{M} w_j x^j,$ \\
+\\
+$\frac{\partial y(x_n, \boldsymbol{w})}{\partial w_i} = x_n^i $\\
+\\
+$ \frac{\partial E(\boldsymbol{w})}{\partial w_i} = \sum_{n=1}^{N} \{y(x_n, \boldsymbol{w}) - t_n\} x_n^i = 0 $\\
+\\
+$\sum_{n=1}^{N} y(x_n, \boldsymbol{w})x_n^i = \sum_{n=1}^{N} t_n x_n^i$\\
+\\
+$\sum_{n=1}^{N} \left( \sum_{j=0}^{M} w_j x_n^j \right) x_n^i = \sum_{n=1}^{N} \underbrace{\left( \sum_{j=0}^{M} x_n^{j+i} \right)}_{A_{ij}} w_j = \underbrace{\sum_{n=1}^{N} t_n x_n^i}_{T_i}$\\
+\\
+$ \underline{\sum_{j=0}^{M}A_{ij} w_j = T_i\quad} \vline $\\
+\end{tabular}
+
+
+\item \textbf{Exercício 1.2} \par
+
+Escreva o conjunto de equações lineares acopladas, análogo a $\sum_{j=0}^{M}A_{ij} w_i = T_i$, satisfeitas pelos coeficientes $w_i$ que minimizam a função de erro da soma dos quadrados regularizada dada por $\Tilde{E}(\boldsymbol{w})=\frac{1}{2}\sum_{n=1}^{N} \{y(x_n,w)-t_n\}^2 - \frac{\lambda}{2}||\boldsymbol{w}||^2$.
+\newline \par
+\textbf{Solução:}
+
+\begin{tabular}{l}
+\\
+$ \frac{\partial \Tilde{E}(\boldsymbol{w}_i)}{\partial \boldsymbol{w}}=\frac{1}{2}\sum_{n=1}^{N} \left\{ \sum_{j=0}^{M} w_j x_n^j -t_n 
+\right\} x_n^i    - \lambda w_i = 0$\\
+\\
+$  \sum_{j=0}^{M}A_{ij} w_j + \lambda w_i = T_i $\\
+\\
+$  \sum_{j=0}^{M}A_{ij} w_j + \sum_{j=0}^{M} \delta_{ij} \lambda w_j = T_i \quad \text{onde} \quad  \delta_{ij} = \begin{cases}
+0 \quad \text{, se} \quad i \neq j\\
+0 \quad \text{, se} \quad i = j\\
+\end{cases}$\\
+\\
+$\underline{\sum_{j=0}^{M}(A_{ij} + \delta_{ij} \lambda)w_j = T_i\quad} \vline $
+\end{tabular}
+
+\item \textbf{Exercício 1.5} \par
+
+Usando a definição $var[f(x)]=\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2]$ mostre que $var[f(x)]$ satisfaz $var[f(x)]=\mathbb{E}[f(x)^2]-\mathbb{E}[f(x)]^2$.
+\newline \par
+\textbf{Solução:}
+
+\begin{tabular}{l}
+\\
+$\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2] = \mathbb{E}[f(x)^2-2f(x)\mathbb{E}[f(x)]+\mathbb{E}[f(x)]^2]$\\
+\\
+$\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2] = \mathbb{E}[f(x)^2]-2\mathbb{E}[f(x)]\mathbb{E}[f(x)]+\mathbb{E}[\mathbb{E}[f(x)]^2]]$\\
+\\
+$\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2] = \mathbb{E}[f(x)^2]-2\mathbb{E}[f(x)]^2+\mathbb{E}[f(x)]^2$\\
+\\
+$\underline{\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2] = \mathbb{E}[f(x)^2]-\mathbb{E}[f(x)]^2\quad} \vline$\\
+\\
+\end{tabular}
+
+
+
+\item \textbf{Exercício 1.6} \par
+
+Mostre que se duas variáveis $x$ e $y$ são independentes, então a covariância entre elas é zero.
+\newline \par
+\textbf{Solução:}
+
+\begin{tabular}{l}
+\\
+$cov[x,y]=\mathbb{E}[x,y]-\mathbb{E}[x]\mathbb[y]$\\
+\\
+$\mathbb{E}[x,y]=\sum_x \sum_y p(x,y) x y$\\
+\\
+Se $x$ e $y$ são independentes, $p(x,y)=p(x)p(y)$, então temos\\
+\\
+$\mathbb{E}[x,y]=\sum_x \sum_y p(x)p(y) x y = \sum_x p(x) x  \sum_y p(y) y = \mathbb{E}[x]\mathbb{E}[y]$\\
+\\
+$cov[x,y]=\mathbb{E}[x,y]-\mathbb{E}[x]\mathbb[y] = \mathbb{E}[x]\mathbb{E}[y] - \mathbb{E}[x]\mathbb{E}[y]$\\
+\\
+$\underline{cov[x,y] = 0\quad} \vline$
+\end{tabular}
+
+
+\item \textbf{Exercício 1.7} \par
+
+Neste exercício, provamos a condição de normalização $\int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2) dx = 1 $ para a distribuição gaussiana univariável. Para fazer isso, considere a integral
+\begin{equation*}
+    I = \int_{-\infty}^{\infty}\exp\left(-\frac{1}{2\sigma^2}x^2\right)dx
+\end{equation*}
+que podemos avaliar primeiro escrevendo o seu quadrado na forma
+\newline \par
+\begin{equation*}
+    I^2 = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\exp\left(-\frac{1}{2\sigma^2}x^2 + -\frac{1}{2\sigma^2}y^2\right)dxdy.
+\end{equation*}
+Agora faça a transformação de coordenadas cartesianas $(x, y)$ para coordenadas polares $(r, \theta)$ e então substitua $u = r^2$. Mostre que, ao realizar as integrais em relação a $\theta$ e $u$, e em seguida, tirar a raiz quadrada de ambos os lados, obtemos
+\begin{equation*}
+    I = \left(2\pi\sigma^2\right)^{1/2}.
+\end{equation*}
+Finalmente, use esse resultado para mostrar que a distribuição Gaussiana $\mathcal{N}(x | \mu, \sigma^2)$ é normalizada.
+\newline \par
+\textbf{Solução:}
+
+\begin{tabular}{l}
+\\
+$I^2 = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\exp\left(-\frac{1}{2\sigma^2}x^2 + -\frac{1}{2\sigma^2}y^2\right)dxdy = 
+ \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\exp\left[-\frac{1}{2\sigma^2}(x^2+y^2) \right]dxdy $\\
+\\
+Fazendo a transformação de coordenadas cartesianas para polares temos\\
+\\
+$r^2 = x^2 + y^2$ e $dxdy = rdrd\theta$\\
+\\
+Substituindo\\
+\\
+$I^2 = \int_{0}^{2\pi}\int_{0}^{\infty}\exp\left(-\frac{1}{2\sigma^2}r^2 \right) r drd\theta =
+2\pi\int_{0}^{\infty}\exp\left(-\frac{1}{2\sigma^2}r^2 \right) r dr$\\
+\\
+Fazendo $u = r^2$, temos $du = 2 r dr$\\
+\\
+$ I^2 = \pi\int_{0}^{\infty}\exp\left(-\frac{1}{2\sigma^2}u \right) du =
+\pi \left[-2\sigma^2 \exp\left( -\frac{u}{2\sigma^2} \right)  \right]_0^\infty = 2\pi\sigma^2$\\
+\\
+$ \underline{I = \left( 2\pi\sigma^2 \right)^{1/2} \quad} \vline$\\
+\\
+Integrando a distribuição Gaussiana temos\\
+\\
+$\int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2)dx = \int_{-\infty}^{\infty} \frac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} dx$\\
+\\
+Fazendo $u = x - \mu$ e, consequentemente, $du = dx$ temos\\
+\\
+$\int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2)dx =\frac{1}{(2\pi\sigma^2)^{1/2}} \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}u^2 \right\} du =\frac{I}{(2\pi\sigma^2)^{1/2}} = \frac{{(2\pi\sigma^2)^{1/2}}}{(2\pi\sigma^2)^{1/2}} $\\
+\\
+$\underline{\int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2)dx = 1 \quad} \vline $
+\end{tabular}
+
+
+\item \textbf{Exercício 1.8} \par
+
+Usando uma mudança de variáveis, verifique que a distribuição gaussiana univariável dada por $\mathcal{N}(x | \mu, \sigma^2)= \frac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\}$ satisfaz $\mathbb{E}[x] = \int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2)x dx=\mu $. Em seguida, diferenciando ambos os lados da condição de normalização
+\begin{equation*}
+    \int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2)dx=1
+\end{equation*}
+em relação a $\sigma^2$ verifique que a Gaussiana satisfaz  $\mathbb{E}[x^2] = \int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2)x^2 dx=\mu^2+\sigma^2 $. Finalmente, mostre que $var[x]=\mathbb{E}[x^2]-\mathbb{E}[x]^2=\sigma^2$ é verdadeira. 
+\newpage \par
+\textbf{Solução:}
+
+\begin{tabular}{l}
+    $\mathbb{E}[x]=\int_{-\infty}^{\infty} \frac{e^{\left\{-\frac{1}{2 \sigma^2}(x-\mu)^2\right\}}}{\left(2 \pi \sigma^2\right)^{1/2}} x d x$ \\
+    \\
+    $y=x-\mu \quad \rightarrow \quad x=y+\mu \quad \text{e} \quad d x=d y$ \\
+    \\
+    $\mathbb{E}[x]=\int_{-\infty}^{\infty} \frac{e^{\left\{-\frac{1}{2 \sigma^2} y^2\right\}}}{\left(2 \pi \sigma^2\right)^{1 / 2}}(y+\mu) d y$ \\
+    \\
+    $y e^{-\frac{y^2}{2 \sigma^2}} \quad \text{é impar, então a inlogral de} \quad(-\infty, \infty) \quad \text {é nula}$ \\
+    \\
+    $\mathbb{E}[x]=\int_{-\infty}^{\infty} \frac{e^{-\frac{y^2}{2 \sigma^2}}}{\left(2 \pi \sigma^2\right)^{\frac{1}{2}}} \cdot \mu d y=\frac{\mu}{\left(2 \pi \sigma^2\right)^{1 / 2}} \cdot I \quad \text{(do exercício anterior)}$ \\
+    \\
+    $\mathbb{E}[x]=\frac{\mu}{\left(2 \pi \sigma^2\right)^{1 / 2}} \cdot\left(2 \pi \sigma^2\right)^{\frac{1}{2}}$\\
+    \\
+    $\underline{\mathbb{E}[x]=\mu \quad} \vline$\\
+    \\
+\end{tabular}
+\newline
+\begin{tabular}{l}
+    $ \int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2)dx=  \int_{-\infty}^{\infty} \frac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} dx = 1 $\\
+    \\
+    $ \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} dx = (2\pi\sigma^2)^{1/2} $\\
+    \\
+    $ \frac{d}{d \sigma^2} \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} dx = \frac{d}{d \sigma^2} (2\pi\sigma^2)^{1/2} $\\
+    \\
+    $ \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} \left( \frac{-(x-\mu)^2}{2} \cdot (-1) \cdot \frac{1}{\sigma^4} \right) dx = \sqrt{2\pi}\frac{1}{2}(\sigma^2)^{-1/2} $\\
+    \\
+    $ \frac{1}{(2\pi\sigma)^{1/2}} \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} dx = \sigma^2 $\\
+    \\
+    $\mathbb{E}[(x-\mu)^2] = \sigma^2$\\
+    \\
+    Porém,\\
+    \\
+    $\mathbb{E}[(x-\mu)^2] = \mathbb{E}[x^2-2x\mu^2+\mu^2] =  \mathbb{E}[x^2]+\mathbb{E}[-2x\mu]+ \mathbb{E}[\mu^2]$\\
+    \\
+    $\mathbb{E}[(x-\mu)^2] = \mathbb{E}[x^2]-2\mu\mathbb{E}[x] +\mu^2$\\
+    \\
+    $\mathbb{E}[(x-\mu)^2] = \mathbb{E}[x^2]-2\mu^2 +\mu^2 = \mathbb{E}[x^2]-\mu^2$\\
+    \\
+    $\mathbb{E}[x^2] =\mu^2 + \underbrace{\mathbb{E}[(x-\mu)^2]}_{\sigma^2}$\\
+    \\
+    $\underline{ \mathbb{E}[x^2] =\mu^2 + \sigma^2 \quad} \vline$\\
+\end{tabular}
+
+\begin{tabular}{l}
+\\
+$var[x]=E[x^2]-E[x]^2=\mu^2+\sigma^2-\mu^2$\\
+\\
+$\underline{var[x]=\sigma^2 \quad} \vline$\\
+
+\end{tabular}
+
+
+\item \textbf{Exercício 1.9} \par
+
+Mostre que a moda (ou seja, o máximo) da distribuição Gaussiana $\mathcal{N}(x | \mu, \sigma^2)= \frac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\}$  é dado por $\mu$. Da mesma forma, mostre que o modo da distribuição gaussiana multivariada 
+$\mathcal{N}(\boldsymbol{x} | \boldsymbol{\mu}, \boldsymbol{\Sigma}^2)= \frac{1}{(2\pi)^{D/2}|\boldsymbol{\Sigma}|^{1/2}}\exp\left\{ -\frac{1}{2}(\boldsymbol{x} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1}(\boldsymbol{x} - \boldsymbol{\mu})  \right\}$
+é dado por $\boldsymbol{\mu}$.
+\newline \par
+\textbf{Solução:}
+
+\item \textbf{Exercício 1.10} \par
+
+Suponha que as varáveis $x$ e $z$ são estatisticamente independentes. Mostre que a média e a variância da soma delas satisfazem
+\begin{equation*}
+    \mathbb{E}[x+z]=\mathbb{E}[x]+\mathbb{E}[z]
+\end{equation*}
+\begin{equation*}
+    var[x+z]=var[x]+var[z].
+\end{equation*}
+\newline \par
+\textbf{Solução:}
+
+\item \textbf{Exercício 1.11} \par
+
+Fazendo as derivadas da função de log-verossimilhança $\ln p (\boldsymbol{x}|\mu, \sigma^2) = -\frac{1}{\sigma^2}\sum_{n=1}^{N}(x_n-\mu)^2-\frac{N}{2}\ln \sigma^2 - \frac{N}{2}\ln (2\pi)$ em relação a $\mu$ e $\sigma^2$ iguais a zero, verifique os resultados $\mu_{ML}=\frac{1}{N}\sum_{n=1}^{N}x_n$ e $\sigma_{ML}^2=\frac{1}{N}\sum_{n=1}^{N}(x_n-\mu_{ML})^2$.
+\newline \par
+\textbf{Solução:}
+
+\item \textbf{Exercício 1.13} \par
+
+Suponha que a variância de uma distribuição Gaussiana seja estimada usando o resultado $\sigma_{ML}^2=\frac{1}{N}\sum_{n=1}^{N}(x_n-\mu_{ML})^2$, mas com a estimativa de máxima verossimilhança $\mu_{ML}$ substituída pelo valor verdadeiro $\mu$ da média. Mostre que esse estimador tem a propriedade de que sua esperança é dada pela verdadeira variância $\sigma^2$.
+\newline \par
+\textbf{Solução:}
+
+\item \textbf{Exercício 1.21} \par
+
+Considere dois números não negativos $a$ e $b$, e mostre que, se $a\leq b$, então $a \leq (ab)^{1/2}$. Use esse resultado para mostrar que, se as regiões de decisão de um problema de classificação de duas classes são escolhidas para minimizar a probabilidade de classificação errada, essa probabilidade satisfará
+\begin{equation*}
+    p(erro) \leq \int \{p(x,C_1)p(x,C_2)\}^{1/2}dx.
+\end{equation*}
+\newline \par
+\textbf{Solução:}
+
+\item Exercício 1.22 \par
+
+Dada uma matriz de perda com elementos $L_{kj}$, o risco esperado é minimizado se, para cada $x$, escolhermos a classe que minimiza $\sum_{k}^{}L_{kj}p(C_k | x)$. Verifique que, quando a matriz de perda é dada por $L_{kj} = 1 - I_{kj}$, onde $I_{kj}$ são os elementos da matriz identidade, isso reduz ao critério de escolher a classe que possui a maior probabilidade posterior. Qual é a interpretação dessa forma de matriz de perda?
+\newline \par
+\textbf{Solução:}
+
+\item \textbf{Exercício 1.23} \par
+
+Derive o critério para minimizar a perda esperada quando há uma matriz de perda geral e probabilidades a priori gerais para as classes.
+\newline \par
+\textbf{Solução:}
+
+\item \textbf{Exercício 1.25} \par
+
+Considere a generalização da função de perda quadrática $\mathbb{E}[L] = \int \int \{y(\boldsymbol{x})-t\}^2p(\boldsymbol{x},t)d\boldsymbol{x}t$ para uma única variável alvo $t$ para o caso de múltiplas variáveis alvo descritas pelo vetor $\boldsymbol{t}$ dado por
+\begin{equation*}
+    \mathbb{E}[L(\boldsymbol{t},\boldsymbol{y}(\boldsymbol{x}))] = \int \int ||\boldsymbol{y}(\boldsymbol{x})-\boldsymbol{t}||^2p(\boldsymbol{x},\boldsymbol{t})d\boldsymbol{x}d\boldsymbol{t}.
+\end{equation*}
+Usando o cálculo das variacional, mostre que a função $\boldsymbol{y}(\boldsymbol{x})$ para a qual essa perda esperada é minimizada é dada por $\boldsymbol{y}(\boldsymbol{x}) = \mathbb{E}_{\boldsymbol{t}}[\boldsymbol{t}|\boldsymbol{x}]$. Mostre que esse resultado se reduz a $y(\boldsymbol{x}) = \frac{\int tp(\boldsymbol{x},t)dt}{p(\boldsymbol{x})} = \int tp(t|\boldsymbol{x}) dt = \mathbb{E}_t[t|\boldsymbol{x}]$ para o caso de uma única variável alvo t.
+\newline \par
+\textbf{Solução:}
+
+\item \textbf{Exercício 1.31} \par
+
+Considere duas variáveis $x$ e $y$ com distribuição conjunta $p(x, y)$. Mostre que a entropia diferencial desse par de variáveis satisfaz
+\begin{equation*}
+    H[x,y] \leq H[x] + H[y]
+\end{equation*}
+com igualdade se, e somente se, $x$ e $y$ forem estatisticamente independentes.
+\newline \par
+\textbf{Solução:}
+
+\item \textbf{Exercício 1.33} \par
+
+Suponha que a entropia condicional $H[y|x]$ entre duas variáveis aleatórias discretas x e y seja zero. Mostre que, para todos os valores de x para os quais $p(x) > 0$, a variável $y$ deve ser uma função de $x$, em outras palavras, para cada $x$, há apenas um valor de $y$ tal que $p(y|x) \neq 0$.
+\newline \par
+\textbf{Solução:}
+
+\item \textbf{Exercício 1.37} \par
+
+Usando a definição $H[y|x] = - \int \int p(y,x) \ln p(y|x) dy dx$ junto com a regra do produto da probabilidade, prove o resultado $H[x,y] = H[y|x] + H[x]$. 
+\newline \par
+\textbf{Solução:}
+
+\item \textbf{Exercício 1.39} \par
+
+Considere que duas variáveis binárias $x$ e $y$ tendo a distribuição conjunta dada por
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $x$ & $y$ & $p(x, y)$ \\
+    \hline
+    0 & 0 & 1/3\\
+    \hline
+    0 & 1 & 1/3\\
+    \hline
+    1 & 0 & 0\\
+    \hline
+    1 & 1 & 1/3\\
+    \hline
+    \end{tabular}
+\end{center}
+Avalie as quantidades abaixo
+\begin{center}
+    \begin{tabular}{c c c c c c}
+     (a)$H[x]$ & (b)$H[y]$ & (c)$H[y|x]$ & (d)$H[x|y]$ & (e)$H[x,y]$ & (f)$I[x,y]$. \\
+    \end{tabular}
+\end{center}
+Desenhe um diagrama para mostrar a relação entre essas diversas quantidades.
+\newline \par
+\textbf{Solução:}
+
+\item \textbf{Exercício 1.41} \par
+
+Usando as regras da soma e do produto de probabilidade, mostre que a informação mútua $I(x, y)$ satisfaz a relação $I[x,y]=H[x]-H[x|y]=H[y]-H[y|x].$
+\newline \par
+\textbf{Solução:}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}
