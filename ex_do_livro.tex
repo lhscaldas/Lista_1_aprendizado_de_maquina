@@ -397,9 +397,18 @@ A matriz de perdas da forma $L_{kj} = 1 - I_{kj}$ atribui o mesmo peso, de valor
 \item \textbf{Exercício 1.23} \par
 
 Derive o critério para minimizar a perda esperada quando há uma matriz de perda geral e probabilidades a priori gerais para as classes.
-
 \newline \par
 \textbf{Solução:}
+
+$\mathbb{E}[L]=\sum_{K}L_{kj}p(C_k | x)$
+
+Pelo Teorema de Beyes, $p(C_k|x)=\dfrac{p(x|C_k)p(C_k)}{p(x)}$
+
+$\mathbb{E}[L]=\sum_{K}L_{kj}\dfrac{p(x|C_k)p(C_k)}{p(x)}$
+
+$\underline{\mathbb{E}[L] \propto \sum_{K}L_{kj}p(x|C_k)p(C_k) \quad}\vline $
+
+$ $
 
 \item \textbf{Exercício 1.25} \par
 
@@ -411,6 +420,26 @@ Usando o cálculo das variacional, mostre que a função $\boldsymbol{y}(\boldsy
 \newline \par
 \textbf{Solução:}
 
+$\dfrac{\delta \mathbb{E}[L(\boldsymbol{t},\boldsymbol{y}(\boldsymbol{x}))]}{\delta \boldsymbol{y}(\boldsymbol{x})} = \dfrac{\delta}{\delta \boldsymbol{y}(\boldsymbol{x})} \left( \displaystyle \int \int ||\boldsymbol{y}(\boldsymbol{x})-\boldsymbol{t}||^2p(\boldsymbol{x},\boldsymbol{t})d\boldsymbol{x}d\boldsymbol{t} \right) = 0$
+
+$\dfrac{\delta \mathbb{E}[L(\boldsymbol{t},\boldsymbol{y}(\boldsymbol{x}))]}{\delta \boldsymbol{y}(\boldsymbol{x})} = \displaystyle  \int 2(\boldsymbol{y}(\boldsymbol{x})-\boldsymbol{t}) p(\boldsymbol{x},\boldsymbol{t}) d\boldsymbol{t} = 0$
+
+$\boldsymbol{y}(\boldsymbol{x}) = \displaystyle \dfrac{\int \boldsymbol{t} p(\boldsymbol{t},\boldsymbol{x}) d\boldsymbol{t}}{\int p(\boldsymbol{t},\boldsymbol{x}) d\boldsymbol{t}} $
+
+$\boldsymbol{y}(\boldsymbol{x}) = \displaystyle \int \dfrac{\boldsymbol{t} p(\boldsymbol{t},\boldsymbol{x}) d\boldsymbol{t}}{p(\boldsymbol{x})} $
+
+$\boldsymbol{y}(\boldsymbol{x}) = \displaystyle \int \boldsymbol{t} p(\boldsymbol{t}|\boldsymbol{x}) d\boldsymbol{t} $
+
+$\underline{\boldsymbol{y}(\boldsymbol{x}) = \mathbb{E}[\boldsymbol{t}|\boldsymbol{x}] \quad} \vline $
+
+$ $
+
+Para o caso de um target escalar $t$, temos
+
+$\underline{\boldsymbol{y}(\boldsymbol{x}) = \displaystyle \int t p(t|\boldsymbol{x}) dt = \mathbb{E}[t|\boldsymbol{x}] \quad} \vline $
+
+$ $
+
 \item \textbf{Exercício 1.31} \par
 
 Considere duas variáveis $x$ e $y$ com distribuição conjunta $p(x, y)$. Mostre que a entropia diferencial desse par de variáveis satisfaz
@@ -421,17 +450,79 @@ com igualdade se, e somente se, $x$ e $y$ forem estatisticamente independentes.
 \newline \par
 \textbf{Solução:}
 
+$H[x,y] = \displaystyle - \int \int p(x,y) ln[ p(x,y)] dx dy$
+
+Se $x$ e $y$ são independentes,
+
+$H[x,y] = \displaystyle - \int \int p(x)p(y) ln[ p(x)p(y)] dx dy$
+
+$H[x,y] = \displaystyle - \int \int p(x)p(y) [ln p(x) + ln p(y)] dx dy$
+
+$H[x,y] = \displaystyle - \int \int p(x)p(y) ln p(x) dx dy - \int \int p(x)p(y) ln p(y) dx dy$
+
+$H[x,y] = \displaystyle - \int p(x) ln p(x) dx - \int p(y) ln p(y) dy$
+
+$\underline{H[x,y] = H[x] + H[y] \quad} \vline$
+
+$ $
+
+Se $H[x,y] = H[y|x] + H[x]$, no caso de $x$ e $y$ forem estatisticamente independentes teremos que $H[y|x] = H[y]$. Calculando a informação mútua temos
+
+$I[x,y] = H[y]-H[y|x] = 0$
+
+Porém a informação mútua é dada pela divergência de Kullback-Leibler 
+
+$$I[x,y] = \displaystyle - \int \int p(x,y) ln\left[ \dfrac{p(x)p(y)}{p(x,y)}  \right] dy dx $$ 
+
+a qual só será nula se $p(x,y) = p(x)p(y)$, condição que só é satisfeita se $x$ e $y$ forem estatisticamente independentes.
+
+Se elas não forem independentes, $I[x,y] \neq 0$. Nesse caso, fazendo $I[x,y] = C$, sendo $C$ uma constante positiva, temos
+
+$H[y|x] = H[y] - I[x,y] = H[y] - C$
+
+$H[x,y] = H[y|x] + H[x] = H[y] + H[x] - C < H[y] + H[x]$
+
+Então, 
+
+$\underline{H[x,y] \leq H[x] + H[y] \quad} \vline$ como se queria demonstrar.
+
+
+
 \item \textbf{Exercício 1.33} \par
 
 Suponha que a entropia condicional $H[y|x]$ entre duas variáveis aleatórias discretas x e y seja zero. Mostre que, para todos os valores de x para os quais $p(x) > 0$, a variável $y$ deve ser uma função de $x$, em outras palavras, para cada $x$, há apenas um valor de $y$ tal que $p(y|x) \neq 0$.
 \newline \par
 \textbf{Solução:}
 
+$H[x,y] = H[y|x] + H[x]$
+
+Se $H[y|x]=0$ 
+
+$\underline{H[x,y] = H[x] \quad} \vline$
+
+$ $
+
+Esse resultado significa que a informação necessária para descrever $x$ e $y$ é a mesma informação necessária para descrever apenas $x$, o que só pode ocorrer se $y$ for totalmente dependente de $x$, ou seja, $y=f(x)$.
+
 \item \textbf{Exercício 1.37} \par
 
 Usando a definição $H[y|x] = - \int \int p(y,x) \ln p(y|x) dy dx$ junto com a regra do produto da probabilidade, prove o resultado $H[x,y] = H[y|x] + H[x]$. 
 \newline \par
 \textbf{Solução:}
+
+$H[y|x] = \displaystyle - \int \int p(x,y) ln[p(y|x)] dy dx $
+
+Aplicando a regra do produto
+
+$H[y|x] = \displaystyle - \int \int p(x,y) ln\left[\dfrac{p(x,y)}{p(x)}\right] dy dx $
+
+$H[y|x] = \displaystyle - \int \int p(x,y) ln[p(x,y)] dy dx + \int \int p(x,y) ln[p(x)] dy dx$
+
+$H[y|x] = \displaystyle H[x,y] + \int p(x) ln[p(x)] dx$
+
+$H[y|x] = H[x,y] - H[x]$
+
+$\underline{H[x,y] = H[y|x] - H[x] \quad} \vline$
 
 \item \textbf{Exercício 1.39} \par
 
