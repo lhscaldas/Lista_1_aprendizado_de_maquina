@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.6)  15 MAY 2024 11:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.6)  15 MAY 2024 21:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -432,76 +432,76 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--117
  []
 
 [4] [5] [6]
-Overfull \hbox (75.20427pt too wide) in paragraph at lines 217--220
-[]\OT1/cmr/m/n/12 Mostre que a moda (ou seja, o m^^Saximo) da dis-tri-bui^^Xc~ao Gaus-si-ana $\OMS/cmsy/m/n/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ^^V; ^^[[]\OT1/cmr/m/n/12 ) = [] [] []$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--220
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 252--253
+Underfull \hbox (badness 10000) in paragraph at lines 225--226
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 258--259
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--265
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 273--275
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 283--285
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 290--291
-
+Overfull \hbox (15.79123pt too wide) in paragraph at lines 297--313
+[][] 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 296--297
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 346--347
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 324--325
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 403--404
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 330--331
+Underfull \hbox (badness 10000) in paragraph at lines 413--414
 
  []
 
-) [9]
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 422--424
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 432--434
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 445--446
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 473--474
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--480
+
+ []
+
+) [13]
 \openout2 = `ex_extras.aux'.
 
  (ex_extras.tex
@@ -514,7 +514,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-[10
+[14
 
 
 
@@ -523,7 +523,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--46
 
  []
 
-) [11] (Lista1.aux (ex_do_livro.aux) (ex_extras.aux))
+) [15] (Lista1.aux (ex_do_livro.aux) (ex_extras.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-04-11>
@@ -532,15 +532,15 @@ L3 programming layer <2024-04-11>
 Here is how much of TeX's memory you used:
  8465 strings out of 474369
  143809 string characters out of 5740515
- 1942754 words of memory out of 5000000
+ 1943754 words of memory out of 5000000
  30734 multiletter control sequences out of 15000+600000
  570391 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,18n,79p,636b,266s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,18n,79p,636b,310s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\lhsca\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Lista1.pdf (11 pages, 368650 bytes).
+Output written on Lista1.pdf (15 pages, 380609 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
+ 149 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

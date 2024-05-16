@@ -167,7 +167,7 @@ em relação a $\sigma^2$ verifique que a Gaussiana satisfaz  $\mathbb{E}[x^2] =
     \\
     $\mathbb{E}[x]=\int_{-\infty}^{\infty} \frac{e^{\left\{-\frac{1}{2 \sigma^2} y^2\right\}}}{\left(2 \pi \sigma^2\right)^{1 / 2}}(y+\mu) d y$ \\
     \\
-    $y e^{-\frac{y^2}{2 \sigma^2}} \quad \text{é impar, então a inlogral de} \quad(-\infty, \infty) \quad \text {é nula}$ \\
+    $y e^{-\frac{y^2}{2 \sigma^2}} \quad \text{é impar, então a integral de} \quad(-\infty, \infty) \quad \text {é nula}$ \\
     \\
     $\mathbb{E}[x]=\int_{-\infty}^{\infty} \frac{e^{-\frac{y^2}{2 \sigma^2}}}{\left(2 \pi \sigma^2\right)^{\frac{1}{2}}} \cdot \mu d y=\frac{\mu}{\left(2 \pi \sigma^2\right)^{1 / 2}} \cdot I \quad \text{(do exercício anterior)}$ \\
     \\
@@ -186,7 +186,7 @@ em relação a $\sigma^2$ verifique que a Gaussiana satisfaz  $\mathbb{E}[x^2] =
     \\
     $ \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} \left( \frac{-(x-\mu)^2}{2} \cdot (-1) \cdot \frac{1}{\sigma^4} \right) dx = \sqrt{2\pi}\frac{1}{2}(\sigma^2)^{-1/2} $\\
     \\
-    $ \frac{1}{(2\pi\sigma)^{1/2}} \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} dx = \sigma^2 $\\
+    $ \frac{1}{(2\pi\sigma^2)^{1/2}} \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} (x-\mu)^2 dx = \sigma^2 $\\
     \\
     $\mathbb{E}[(x-\mu)^2] = \sigma^2$\\
     \\
@@ -214,11 +214,55 @@ $\underline{var[x]=\sigma^2 \quad} \vline$\\
 
 \item \textbf{Exercício 1.9} \par
 
-Mostre que a moda (ou seja, o máximo) da distribuição Gaussiana $\mathcal{N}(x | \mu, \sigma^2)= \frac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\}$  é dado por $\mu$. Da mesma forma, mostre que o modo da distribuição gaussiana multivariada 
-$\mathcal{N}(\boldsymbol{x} | \boldsymbol{\mu}, \boldsymbol{\Sigma}^2)= \frac{1}{(2\pi)^{D/2}|\boldsymbol{\Sigma}|^{1/2}}\exp\left\{ -\frac{1}{2}(\boldsymbol{x} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1}(\boldsymbol{x} - \boldsymbol{\mu})  \right\}$
+Mostre que a moda (ou seja, o máximo) da distribuição Gaussiana 
+
+$$\mathcal{N}(x | \mu, \sigma^2)= \frac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\}$$
+
+é dado por $\mu$. Da mesma forma, mostre que o modo da distribuição gaussiana multivariada 
+
+$$\mathcal{N}(\boldsymbol{x} | \boldsymbol{\mu}, \boldsymbol{\Sigma}^2)= \frac{1}{(2\pi)^{D/2}|\boldsymbol{\Sigma}|^{1/2}}\exp\left\{ -\frac{1}{2}(\boldsymbol{x} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1}(\boldsymbol{x} - \boldsymbol{\mu})  \right\}$$
+
 é dado por $\boldsymbol{\mu}$.
 \newline \par
 \textbf{Solução:}
+
+\begin{itemize}
+    \item Para a univariada temos:
+    
+    \begin{tabular}{l}
+        \\
+        $\frac{d}{dx} \mathcal{N}(x|\mu,\sigma^2) = \frac{d}{dx} \left( \frac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} \right) = 0$\\
+        \\
+        $\frac{d}{dx} \mathcal{N}(x|\mu,\sigma^2) = \frac{1}{(2\pi\sigma^2)^{1/2}} \left[ \frac{-2(x-\mu)}{2\sigma^2} \right] \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} = \frac{-(x-\mu)}{\sigma^2} \mathcal{N}(x|\mu,\sigma^2) = 0$\\
+        \\
+        Como $\mathcal{N}(x|\mu,\sigma^2) = 0$ só ocorre para $x = \pm \infty$, o ponto de máximo estará em\\
+        \\
+        $x$ tal que $\frac{-(x-\mu)}{\sigma^2} = 0$\\
+        \\
+        $\underline{x=\mu \quad} \vline$\\
+        \\
+    \end{tabular}
+
+    \item De forma análoga, para a multivariada temos:
+    
+    \begin{tabular}{l}
+        \\
+        $\frac{d}{dx} \mathcal{N}(\boldsymbol{x} | \boldsymbol{\mu}, \boldsymbol{\Sigma}^2) = \frac{d}{dx} \left( \frac{1}{(2\pi)^{D/2}|\boldsymbol{\Sigma}|^{1/2}}\exp\left\{ -\frac{1}{2}(\boldsymbol{x} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1}(\boldsymbol{x} - \boldsymbol{\mu})  \right\} \right) = \boldsymbol{0}$\\
+        \\
+        $\frac{d}{dx} \mathcal{N}(\boldsymbol{x} | \boldsymbol{\mu}, \boldsymbol{\Sigma}^2) = 
+        -\frac{1}{2} \mathcal{N}(\boldsymbol{x} | \boldsymbol{\mu}, \boldsymbol{\Sigma}^2) \nabla_x \{(\boldsymbol{x}-\boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\boldsymbol{x}-\boldsymbol{\mu})  \}
+         = \boldsymbol{0}$\\
+        \\
+        $\frac{d}{dx} \mathcal{N}(\boldsymbol{x} | \boldsymbol{\mu}, \boldsymbol{\Sigma}^2) = 
+        -\mathcal{N}(\boldsymbol{x} | \boldsymbol{\mu}, \boldsymbol{\Sigma}^2) \boldsymbol{\Sigma}^{-1} (\boldsymbol{x}-\boldsymbol{\mu})
+         = \boldsymbol{0}$\\
+        \\
+        $\boldsymbol{x}-\boldsymbol{\mu} = \boldsymbol{0}$\\
+        \\
+        $\underline{\boldsymbol{x}=\boldsymbol{\mu} \quad} \vline$\\
+    \end{tabular}
+
+\end{itemize}
 
 \item \textbf{Exercício 1.10} \par
 
@@ -232,17 +276,89 @@ Suponha que as varáveis $x$ e $z$ são estatisticamente independentes. Mostre q
 \newline \par
 \textbf{Solução:}
 
+\begin{tabular}{l}
+    \\
+    $ \mathbb{E}[x+z] = \displaystyle \int \int p(x,z) (x+z) dx dz $\\
+    \\
+    Se $x$ e $z$ são independentes, $p(x,z) = p(x)p(z)$\\
+    \\
+    $ \mathbb{E}[x+z] = \displaystyle \int \int p(x)p(z) (x+z) dx dz $\\
+    \\
+    $ \mathbb{E}[x+z] = \displaystyle \int \int p(x)p(z) x dx dz +  \int \int p(x)p(z) z dx dz $\\
+    \\
+    $ \mathbb{E}[x+z] = \displaystyle \underbrace{  \int p(z) dz}_1  \int p(x) x dx  +  \underbrace{\int p(x) dx}_1 \int p(z) z dz $\\
+    \\
+    $ \mathbb{E}[x+z] = \displaystyle \int p(x) x dx  +  \int p(z) z dz $\\
+    \\
+    $ \underline{\mathbb{E}[x+z] = \mathbb{E}[x]  +  \mathbb{E}[z] \quad} \vline $\\
+    \\
+\end{tabular}
+
+\begin{tabular}{l}
+    \\
+    $ var[x+z] = \mathbb{E}[(x+z-\mathbb{E}[x+z])^2] = \mathbb{E}[(x-\mathbb{E}[x]+z-\mathbb{E}[z])^2]$\\
+    \\
+    $ var[x+z] = \underbrace{\mathbb{E}[(x-\mathbb{E}[x])^2]}_{var[x]}+\underbrace{\mathbb{E}[(z-\mathbb{E}[z])^2]}_{var[z]}+\underbrace{\mathbb{E}[2(z-\mathbb{E}[z])(x-\mathbb{E}[x])]}_{-2A}$\\
+    \\
+    $A = \displaystyle \int \int (x-\mathbb{E}[x]) (z-\mathbb{E}[z]) p(x)p(z) dx dz$\\
+    \\
+    $A = \displaystyle \int \int xz p(x)p(z) dx dz + \int \int \mathbb{E}[x] \mathbb{E}[z] p(x)p(z) dx dz - \int \int \mathbb{E}[x] z p(x)p(z) dx dz $\\
+    $ \displaystyle  \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad  \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad  \quad \quad \quad \quad \quad - \int \int \mathbb{E}[z] x p(x)p(z) dx dz$\\
+    $A=\mathbb{E}[x]\mathbb{E}[z]+\mathbb{E}[x]\mathbb{E}[z]-\mathbb{E}[x]\mathbb{E}[z]-\mathbb{E}[z]\mathbb{E}[x]=0$
+    \\
+    \\
+    $ \underline{var[x+z]=var[x]+var[z] \quad} \vline $\\
+    \\
+\end{tabular}
+
 \item \textbf{Exercício 1.11} \par
 
 Fazendo as derivadas da função de log-verossimilhança $\ln p (\boldsymbol{x}|\mu, \sigma^2) = -\frac{1}{\sigma^2}\sum_{n=1}^{N}(x_n-\mu)^2-\frac{N}{2}\ln \sigma^2 - \frac{N}{2}\ln (2\pi)$ em relação a $\mu$ e $\sigma^2$ iguais a zero, verifique os resultados $\mu_{ML}=\frac{1}{N}\sum_{n=1}^{N}x_n$ e $\sigma_{ML}^2=\frac{1}{N}\sum_{n=1}^{N}(x_n-\mu_{ML})^2$.
 \newline \par
 \textbf{Solução:}
 
+\begin{tabular}{l}
+    \\
+    $\frac{d}{d\mu}\ln p (\boldsymbol{x}|\mu, \sigma^2) = \frac{d}{d\mu}\left( -\frac{1}{\sigma^2}\sum_{n=1}^{N}(x_n-\mu)^2-\frac{N}{2}\ln \sigma^2 - \frac{N}{2}\ln (2\pi) \right)$\\
+    \\
+    $\frac{1}{2\sigma^2}(-2)\sum_{n=1}^{N}(x_n-\mu) = 0$\\
+    \\
+    $\sum_{n=1}^{N}\mu = \sum_{n=1}^{N}x_n$\\
+    \\
+    $N\mu = \sum_{n=1}^{N}x_n$\\
+    \\
+    $ \underline{\mu_{ML} = \frac{1}{N} \sum_{n=1}^{N}x_n \quad} \vline $\\
+\end{tabular}
+
+\begin{tabular}{l}
+    \\
+    $\frac{d}{d\sigma^2}\ln p (\boldsymbol{x}|\mu, \sigma^2) = \frac{d}{d\sigma^2}\left( -\frac{1}{\sigma^2}\sum_{n=1}^{N}(x_n-\mu)^2-\frac{N}{2}\ln \sigma^2 - \frac{N}{2}\ln (2\pi) \right)$\\
+    \\
+    $-\frac{1}{2}\frac{(-1)}{\sigma^4} \sum_{n=1}^{N}(x_n-\mu)^2 - \frac{N}{2}\frac{1}{\sigma^2} = 0 $\\
+    \\
+    $ \frac{N}{\sigma^2}  = \frac{1}{\sigma^4} \sum_{n=1}^{N}(x_n-\mu)^2 $\\
+    \\
+    $ \underline{\sigma_{ML}^2 = \frac{1}{N} \sum_{n=1}^{N}(x_n - \mu_{ML})^2 \quad} \vline $\\
+\end{tabular}
+
 \item \textbf{Exercício 1.13} \par
 
 Suponha que a variância de uma distribuição Gaussiana seja estimada usando o resultado $\sigma_{ML}^2=\frac{1}{N}\sum_{n=1}^{N}(x_n-\mu_{ML})^2$, mas com a estimativa de máxima verossimilhança $\mu_{ML}$ substituída pelo valor verdadeiro $\mu$ da média. Mostre que esse estimador tem a propriedade de que sua esperança é dada pela verdadeira variância $\sigma^2$.
 \newline \par
 \textbf{Solução:}
+
+\begin{tabular}{l}
+    \\
+    $\mathbb{E}[\sigma_{ML}^2]=\mathbb{E}[\frac{1}{N}\sum_{n=1}^{N}(x_n-\mu_{ML})^2] = \frac{1}{N}\mathbb{E}[\sum_{n=1}^{N} \left( x_n^2 - 2 x_n \mu_{ML} + \mu_{ML}^2 \right) ]$\\
+    \\
+    $\mathbb{E}[\sigma_{ML}^2]=\frac{1}{N} \left(\mathbb{E}[\sum_{n=1}^{N}x_n^2]-2\mu\mathbb{E}[\sum_{n=1}^{N}x_n]+\mathbb{E}[\sum_{n=1}^{N} \mu^2]\right) $\\
+    \\
+    $\mathbb{E}[\sigma_{ML}^2]=\frac{1}{N} \left(  N(\mu^2+\sigma^2) -2\mu N \mu + N \mu^2 \right) $\\
+    \\
+    $\mathbb{E}[\sigma_{ML}^2]=\frac{1}{N} \left(  N\mu^2+N\sigma^2 - 2N \mu^2 + N \mu^2 \right) $\\
+    \\
+    $ \underline{\mathbb{E}[\sigma_{ML}^2] = \sigma^2 \quad} \vline $\\
+\end{tabular}
 
 \item \textbf{Exercício 1.21} \par
 
@@ -253,11 +369,44 @@ Considere dois números não negativos $a$ e $b$, e mostre que, se $a\leq b$, en
 \newline \par
 \textbf{Solução:}
 
-\item Exercício 1.22 \par
+\begin{tabular}{l}
+    \\
+    $a=b \rightarrow a^2 \leq a b \rightarrow \underline{a \leq (a b)^{1/2} \quad} \vline $\\
+    \\
+    $p(erro)=p(x \in R_1, C_2)+p(x \in R_2, C_1)$ \\
+    \\
+    $p(erro)= \displaystyle \int_{R_1} p(x, C_2) dx + \int_{R_2} p(x, C_1) dx$ \\
+    \\
+    Em $R_1$ temos $p(x, C_2) \leq p(x, C_1)$ e em $R_2$ temos $p(x, C_1) \leq p(x, C_2)$ o que resulta em\\
+    \\
+    $\begin{cases}
+        \displaystyle \int_{R_1} p(x, C_2) dx \leq \int_{R_1} \left\{p(x, C_1)p(x, C_2)\right\}^{1/2} dx \\
+        \\
+        \displaystyle \int_{R_2} p(x, C_1) dx \leq \int_{R_2} \left\{p(x, C_1)p(x, C_2)\right\}^{1/2} dx\\
+    \end{cases}$\\
+    \\
+    Então\\
+    \\
+    $p(erro) \leq \displaystyle \int_{R_1} \left\{p(x, C_1)p(x, C_2)\right\}^{1/2} dx + \int_{R_2} \left\{p(x, C_1)p(x, C_2)\right\}^{1/2} dx$ \\
+    \\
+    Como os integrandos são iguais e as regiões são complementares, podemos unir as \\
+    duas integrais para todo o domínio\\
+    \\
+    $\underline{p(erro) \leq \displaystyle \int \left\{p(x, C_1)p(x, C_2)\right\}^{1/2} dx \quad} \vline $\\
+    \\
+\end{tabular}
+
+
+
+\item \textbf{Exercício 1.22} \par
 
 Dada uma matriz de perda com elementos $L_{kj}$, o risco esperado é minimizado se, para cada $x$, escolhermos a classe que minimiza $\sum_{k}^{}L_{kj}p(C_k | x)$. Verifique que, quando a matriz de perda é dada por $L_{kj} = 1 - I_{kj}$, onde $I_{kj}$ são os elementos da matriz identidade, isso reduz ao critério de escolher a classe que possui a maior probabilidade posterior. Qual é a interpretação dessa forma de matriz de perda?
 \newline \par
 \textbf{Solução:}
+
+\begin{tabular}{l}
+    
+\end{tabular}
 
 \item \textbf{Exercício 1.23} \par
 
