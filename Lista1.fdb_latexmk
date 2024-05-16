@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1715820492.07105 "c:/Users/lhsca/OneDrive/Documentos/Estudos/Mestrado/Disciplinas/Introdução ao Aprendizado de Máquina/Listas/Lista 1/Lista1.tex" "Lista1.pdf" "Lista1" 1715820493.3331 0
+["pdflatex"] 1715822175.11746 "c:/Users/lhsca/OneDrive/Documentos/Estudos/Mestrado/Disciplinas/Introdução ao Aprendizado de Máquina/Listas/Lista 1/Lista1.tex" "Lista1.pdf" "Lista1" 1715822176.38688 0
   "C:/Users/lhsca/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1715008201 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/lhsca/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1715031816 14064 ce5bf0b601aeb0c6e36e13d6b50cb864 ""
   "C:/Users/lhsca/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1715008148 24240394 0e129e212a862dc916b90ad8e0b2ede1 ""
@@ -106,12 +106,12 @@
   "C:/Users/lhsca/AppData/Local/Programs/MiKTeX/tex/latex/ulem/ulem.sty" 1578651445 15682 94f55b803e160cf7fb6e4d77d07cfe1d ""
   "C:/Users/lhsca/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "COPPE UFRJ.png" 1715007025 119268 e8bfcfc0017d81dba38fe40f6f3d3998 ""
-  "Lista1.aux" 1715820493 184 aa05d5b86481d0a75a3c354f1898200f "pdflatex"
+  "Lista1.aux" 1715822176 184 d0665b4d9712c718f92c90397e55413f "pdflatex"
   "Lista1.tex" 1715777720 2448 6156428dec64ca6df0710b886a3a99a6 ""
   "c:/Users/lhsca/OneDrive/Documentos/Estudos/Mestrado/Disciplinas/Introdução ao Aprendizado de Máquina/Listas/Lista 1/Lista1.tex" 1715777720 2448 6156428dec64ca6df0710b886a3a99a6 ""
-  "ex_do_livro.aux" 1715820493 651 a2447d35931652e017fc21e27b17e0c9 "pdflatex"
-  "ex_do_livro.tex" 1715820491 22411 4bc9757b388472e67133dc282ab0f51f ""
-  "ex_extras.aux" 1715820493 1071 4784fcf74518ac785177cb8a175f8eaf "pdflatex"
+  "ex_do_livro.aux" 1715822176 651 fbcbda5540c8a4b5dd2054872d8cbeb1 "pdflatex"
+  "ex_do_livro.tex" 1715822174 21960 b2715187a5e9da4dd70099ff97849cde ""
+  "ex_extras.aux" 1715822176 1071 b104698617f4a290d0d8e762f5c6fcd2 "pdflatex"
   "ex_extras.tex" 1715777712 3113 082a02777ba060193bcd42479c504398 ""
   (generated)
   "Lista1.aux"

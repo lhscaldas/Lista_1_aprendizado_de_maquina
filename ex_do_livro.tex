@@ -17,23 +17,19 @@ Aqui os sufixos $i$ e $j$ denotam os índices de um componente, onde $(x)^i$ den
 \newline \par
 \textbf{Solução:}
 
-\begin{tabular}{l}
-\\
-$\frac{\partial E(\boldsymbol{w})}{\partial w_i} = \sum_{n=1}^{N} \{y(x_n, \boldsymbol{w}) - t_n\} \frac{\partial y(x_n, \boldsymbol{w})}{\partial w_i}$ \\
-\\
-Se $y(x,\boldsymbol{w})=\sum_{j=0}^{M} w_j x^j,$ \\
-\\
-$\frac{\partial y(x_n, \boldsymbol{w})}{\partial w_i} = x_n^i $\\
-\\
-$ \frac{\partial E(\boldsymbol{w})}{\partial w_i} = \sum_{n=1}^{N} \{y(x_n, \boldsymbol{w}) - t_n\} x_n^i = 0 $\\
-\\
-$\sum_{n=1}^{N} y(x_n, \boldsymbol{w})x_n^i = \sum_{n=1}^{N} t_n x_n^i$\\
-\\
-$\sum_{n=1}^{N} \left( \sum_{j=0}^{M} w_j x_n^j \right) x_n^i = \sum_{n=1}^{N} \underbrace{\left( \sum_{j=0}^{M} x_n^{j+i} \right)}_{A_{ij}} w_j = \underbrace{\sum_{n=1}^{N} t_n x_n^i}_{T_i}$\\
-\\
-$ \underline{\sum_{j=0}^{M}A_{ij} w_j = T_i\quad} \vline $\\
-\end{tabular}
+$\frac{\partial E(\boldsymbol{w})}{\partial w_i} = \sum_{n=1}^{N} \{y(x_n, \boldsymbol{w}) - t_n\} \frac{\partial y(x_n, \boldsymbol{w})}{\partial w_i}$ 
 
+Se $y(x,\boldsymbol{w})=\sum_{j=0}^{M} w_j x^j,$ 
+
+$\frac{\partial y(x_n, \boldsymbol{w})}{\partial w_i} = x_n^i $
+
+$ \frac{\partial E(\boldsymbol{w})}{\partial w_i} = \sum_{n=1}^{N} \{y(x_n, \boldsymbol{w}) - t_n\} x_n^i = 0 $
+
+$\sum_{n=1}^{N} y(x_n, \boldsymbol{w})x_n^i = \sum_{n=1}^{N} t_n x_n^i$\\
+
+$\sum_{n=1}^{N} \left( \sum_{j=0}^{M} w_j x_n^j \right) x_n^i = \sum_{n=1}^{N} \underbrace{\left( \sum_{j=0}^{M} x_n^{j+i} \right)}_{A_{ij}} w_j = \underbrace{\sum_{n=1}^{N} t_n x_n^i}_{T_i}$
+
+$ \underline{\sum_{j=0}^{M}A_{ij} w_j = T_i\quad} \vline $
 
 \item \textbf{Exercício 1.2} \par
 
@@ -41,20 +37,20 @@ Escreva o conjunto de equações lineares acopladas, análogo a $\sum_{j=0}^{M}A
 \newline \par
 \textbf{Solução:}
 
-\begin{tabular}{l}
-\\
+
 $ \frac{\partial \Tilde{E}(\boldsymbol{w}_i)}{\partial \boldsymbol{w}}=\frac{1}{2}\sum_{n=1}^{N} \left\{ \sum_{j=0}^{M} w_j x_n^j -t_n 
-\right\} x_n^i    - \lambda w_i = 0$\\
-\\
-$  \sum_{j=0}^{M}A_{ij} w_j + \lambda w_i = T_i $\\
-\\
+\right\} x_n^i    - \lambda w_i = 0$
+
+$  \sum_{j=0}^{M}A_{ij} w_j + \lambda w_i = T_i $
+
 $  \sum_{j=0}^{M}A_{ij} w_j + \sum_{j=0}^{M} \delta_{ij} \lambda w_j = T_i \quad \text{onde} \quad  \delta_{ij} = \begin{cases}
-0 \quad \text{, se} \quad i \neq j\\
-0 \quad \text{, se} \quad i = j\\
-\end{cases}$\\
-\\
+0 \quad \text{, se} \quad i \neq j \\
+0 \quad \text{, se} \quad i = j
+\end{cases}$
+
 $\underline{\sum_{j=0}^{M}(A_{ij} + \delta_{ij} \lambda)w_j = T_i\quad} \vline $
-\end{tabular}
+
+$ $
 
 \item \textbf{Exercício 1.5} \par
 
@@ -62,17 +58,16 @@ Usando a definição $var[f(x)]=\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2]$ mostre qu
 \newline \par
 \textbf{Solução:}
 
-\begin{tabular}{l}
-\\
-$\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2] = \mathbb{E}[f(x)^2-2f(x)\mathbb{E}[f(x)]+\mathbb{E}[f(x)]^2]$\\
-\\
-$\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2] = \mathbb{E}[f(x)^2]-2\mathbb{E}[f(x)]\mathbb{E}[f(x)]+\mathbb{E}[\mathbb{E}[f(x)]^2]]$\\
-\\
-$\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2] = \mathbb{E}[f(x)^2]-2\mathbb{E}[f(x)]^2+\mathbb{E}[f(x)]^2$\\
-\\
-$\underline{\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2] = \mathbb{E}[f(x)^2]-\mathbb{E}[f(x)]^2\quad} \vline$\\
-\\
-\end{tabular}
+
+$\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2] = \mathbb{E}[f(x)^2-2f(x)\mathbb{E}[f(x)]+\mathbb{E}[f(x)]^2]$
+
+$\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2] = \mathbb{E}[f(x)^2]-2\mathbb{E}[f(x)]\mathbb{E}[f(x)]+\mathbb{E}[\mathbb{E}[f(x)]^2]$
+
+$\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2] = \mathbb{E}[f(x)^2]-2\mathbb{E}[f(x)]^2+\mathbb{E}[f(x)]^2$
+
+$\underline{\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2] = \mathbb{E}[f(x)^2]-\mathbb{E}[f(x)]^2\quad} \vline$
+
+$ $
 
 
 
@@ -82,21 +77,19 @@ Mostre que se duas variáveis $x$ e $y$ são independentes, então a covariânci
 \newline \par
 \textbf{Solução:}
 
-\begin{tabular}{l}
-\\
-$cov[x,y]=\mathbb{E}[x,y]-\mathbb{E}[x]\mathbb[y]$\\
-\\
-$\mathbb{E}[x,y]=\sum_x \sum_y p(x,y) x y$\\
-\\
-Se $x$ e $y$ são independentes, $p(x,y)=p(x)p(y)$, então temos\\
-\\
-$\mathbb{E}[x,y]=\sum_x \sum_y p(x)p(y) x y = \sum_x p(x) x  \sum_y p(y) y = \mathbb{E}[x]\mathbb{E}[y]$\\
-\\
-$cov[x,y]=\mathbb{E}[x,y]-\mathbb{E}[x]\mathbb[y] = \mathbb{E}[x]\mathbb{E}[y] - \mathbb{E}[x]\mathbb{E}[y]$\\
-\\
-$\underline{cov[x,y] = 0\quad} \vline$
-\end{tabular}
+$cov[x,y]=\mathbb{E}[x,y]-\mathbb{E}[x]\mathbb[y]$
 
+$\mathbb{E}[x,y]=\sum_x \sum_y p(x,y) x y$
+
+Se $x$ e $y$ são independentes, $p(x,y)=p(x)p(y)$, então temos
+
+$\mathbb{E}[x,y]=\sum_x \sum_y p(x)p(y) x y = \sum_x p(x) x  \sum_y p(y) y = \mathbb{E}[x]\mathbb{E}[y]$
+
+$cov[x,y]=\mathbb{E}[x,y]-\mathbb{E}[x]\mathbb[y] = \mathbb{E}[x]\mathbb{E}[y] - \mathbb{E}[x]\mathbb{E}[y]$
+
+$\underline{cov[x,y] = 0\quad} \vline$
+
+$ $
 
 \item \textbf{Exercício 1.7} \par
 
@@ -117,37 +110,39 @@ Finalmente, use esse resultado para mostrar que a distribuição Gaussiana $\mat
 \newline \par
 \textbf{Solução:}
 
-\begin{tabular}{l}
-\\
+
 $I^2 = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\exp\left(-\frac{1}{2\sigma^2}x^2 + -\frac{1}{2\sigma^2}y^2\right)dxdy = 
- \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\exp\left[-\frac{1}{2\sigma^2}(x^2+y^2) \right]dxdy $\\
-\\
-Fazendo a transformação de coordenadas cartesianas para polares temos\\
-\\
-$r^2 = x^2 + y^2$ e $dxdy = rdrd\theta$\\
-\\
-Substituindo\\
-\\
+ \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\exp\left[-\frac{1}{2\sigma^2}(x^2+y^2) \right]dxdy $
+
+Fazendo a transformação de coordenadas cartesianas para polares temos
+
+$r^2 = x^2 + y^2$ e $dxdy = rdrd\theta$
+
+Substituindo
+
 $I^2 = \int_{0}^{2\pi}\int_{0}^{\infty}\exp\left(-\frac{1}{2\sigma^2}r^2 \right) r drd\theta =
-2\pi\int_{0}^{\infty}\exp\left(-\frac{1}{2\sigma^2}r^2 \right) r dr$\\
-\\
-Fazendo $u = r^2$, temos $du = 2 r dr$\\
-\\
+2\pi\int_{0}^{\infty}\exp\left(-\frac{1}{2\sigma^2}r^2 \right) r dr$
+
+Fazendo $u = r^2$, temos $du = 2 r dr$
+
 $ I^2 = \pi\int_{0}^{\infty}\exp\left(-\frac{1}{2\sigma^2}u \right) du =
-\pi \left[-2\sigma^2 \exp\left( -\frac{u}{2\sigma^2} \right)  \right]_0^\infty = 2\pi\sigma^2$\\
-\\
-$ \underline{I = \left( 2\pi\sigma^2 \right)^{1/2} \quad} \vline$\\
-\\
-Integrando a distribuição Gaussiana temos\\
-\\
-$\int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2)dx = \int_{-\infty}^{\infty} \frac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} dx$\\
-\\
-Fazendo $u = x - \mu$ e, consequentemente, $du = dx$ temos\\
-\\
-$\int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2)dx =\frac{1}{(2\pi\sigma^2)^{1/2}} \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}u^2 \right\} du =\frac{I}{(2\pi\sigma^2)^{1/2}} = \frac{{(2\pi\sigma^2)^{1/2}}}{(2\pi\sigma^2)^{1/2}} $\\
-\\
+\pi \left[-2\sigma^2 \exp\left( -\frac{u}{2\sigma^2} \right)  \right]_0^\infty = 2\pi\sigma^2$
+
+$ \underline{I = \left( 2\pi\sigma^2 \right)^{1/2} \quad} \vline$
+
+$ $
+
+Integrando a distribuição Gaussiana temos
+
+$\int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2)dx = \int_{-\infty}^{\infty} \frac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} dx$
+
+Fazendo $u = x - \mu$ e, consequentemente, $du = dx$ temos
+
+$\int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2)dx =\frac{1}{(2\pi\sigma^2)^{1/2}} \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}u^2 \right\} du =\frac{I}{(2\pi\sigma^2)^{1/2}} = \frac{{(2\pi\sigma^2)^{1/2}}}{(2\pi\sigma^2)^{1/2}} $
+
 $\underline{\int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2)dx = 1 \quad} \vline $
-\end{tabular}
+
+$ $
 
 
 \item \textbf{Exercício 1.8} \par
@@ -157,59 +152,57 @@ Usando uma mudança de variáveis, verifique que a distribuição gaussiana univ
     \int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2)dx=1
 \end{equation*}
 em relação a $\sigma^2$ verifique que a Gaussiana satisfaz  $\mathbb{E}[x^2] = \int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2)x^2 dx=\mu^2+\sigma^2 $. Finalmente, mostre que $var[x]=\mathbb{E}[x^2]-\mathbb{E}[x]^2=\sigma^2$ é verdadeira. 
-\newpage \par
+\newline \par
 \textbf{Solução:}
 
-\begin{tabular}{l}
-    $\mathbb{E}[x]=\int_{-\infty}^{\infty} \frac{e^{\left\{-\frac{1}{2 \sigma^2}(x-\mu)^2\right\}}}{\left(2 \pi \sigma^2\right)^{1/2}} x d x$ \\
-    \\
-    $y=x-\mu \quad \rightarrow \quad x=y+\mu \quad \text{e} \quad d x=d y$ \\
-    \\
-    $\mathbb{E}[x]=\int_{-\infty}^{\infty} \frac{e^{\left\{-\frac{1}{2 \sigma^2} y^2\right\}}}{\left(2 \pi \sigma^2\right)^{1 / 2}}(y+\mu) d y$ \\
-    \\
-    $y e^{-\frac{y^2}{2 \sigma^2}} \quad \text{é impar, então a integral de} \quad(-\infty, \infty) \quad \text {é nula}$ \\
-    \\
-    $\mathbb{E}[x]=\int_{-\infty}^{\infty} \frac{e^{-\frac{y^2}{2 \sigma^2}}}{\left(2 \pi \sigma^2\right)^{\frac{1}{2}}} \cdot \mu d y=\frac{\mu}{\left(2 \pi \sigma^2\right)^{1 / 2}} \cdot I \quad \text{(do exercício anterior)}$ \\
-    \\
-    $\mathbb{E}[x]=\frac{\mu}{\left(2 \pi \sigma^2\right)^{1 / 2}} \cdot\left(2 \pi \sigma^2\right)^{\frac{1}{2}}$\\
-    \\
-    $\underline{\mathbb{E}[x]=\mu \quad} \vline$\\
-    \\
-\end{tabular}
-\newline
-\begin{tabular}{l}
-    $ \int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2)dx=  \int_{-\infty}^{\infty} \frac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} dx = 1 $\\
-    \\
-    $ \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} dx = (2\pi\sigma^2)^{1/2} $\\
-    \\
-    $ \frac{d}{d \sigma^2} \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} dx = \frac{d}{d \sigma^2} (2\pi\sigma^2)^{1/2} $\\
-    \\
-    $ \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} \left( \frac{-(x-\mu)^2}{2} \cdot (-1) \cdot \frac{1}{\sigma^4} \right) dx = \sqrt{2\pi}\frac{1}{2}(\sigma^2)^{-1/2} $\\
-    \\
-    $ \frac{1}{(2\pi\sigma^2)^{1/2}} \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} (x-\mu)^2 dx = \sigma^2 $\\
-    \\
-    $\mathbb{E}[(x-\mu)^2] = \sigma^2$\\
-    \\
-    Porém,\\
-    \\
-    $\mathbb{E}[(x-\mu)^2] = \mathbb{E}[x^2-2x\mu^2+\mu^2] =  \mathbb{E}[x^2]+\mathbb{E}[-2x\mu]+ \mathbb{E}[\mu^2]$\\
-    \\
-    $\mathbb{E}[(x-\mu)^2] = \mathbb{E}[x^2]-2\mu\mathbb{E}[x] +\mu^2$\\
-    \\
-    $\mathbb{E}[(x-\mu)^2] = \mathbb{E}[x^2]-2\mu^2 +\mu^2 = \mathbb{E}[x^2]-\mu^2$\\
-    \\
-    $\mathbb{E}[x^2] =\mu^2 + \underbrace{\mathbb{E}[(x-\mu)^2]}_{\sigma^2}$\\
-    \\
-    $\underline{ \mathbb{E}[x^2] =\mu^2 + \sigma^2 \quad} \vline$\\
-\end{tabular}
+    $\mathbb{E}[x]=\int_{-\infty}^{\infty} \frac{e^{\left\{-\frac{1}{2 \sigma^2}(x-\mu)^2\right\}}}{\left(2 \pi \sigma^2\right)^{1/2}} x d x$ 
+    
+    $y=x-\mu \quad \rightarrow \quad x=y+\mu \quad \text{e} \quad d x=d y$ 
+    
+    $\mathbb{E}[x]=\int_{-\infty}^{\infty} \frac{e^{\left\{-\frac{1}{2 \sigma^2} y^2\right\}}}{\left(2 \pi \sigma^2\right)^{1 / 2}}(y+\mu) d y$ 
+    
+    \text{Porém } $y e^{-\frac{y^2}{2 \sigma^2}} $ é impar, então a sua integral no intervalo $(-\infty, \infty)$ é nula 
+    
+    $\mathbb{E}[x]=\int_{-\infty}^{\infty} \frac{e^{-\frac{y^2}{2 \sigma^2}}}{\left(2 \pi \sigma^2\right)^{\frac{1}{2}}} \cdot \mu d y=\frac{\mu}{\left(2 \pi \sigma^2\right)^{1 / 2}} \cdot I \quad \text{(do exercício anterior)}$ 
+    
+    $\mathbb{E}[x]=\frac{\mu}{\left(2 \pi \sigma^2\right)^{1 / 2}} \cdot\left(2 \pi \sigma^2\right)^{\frac{1}{2}}$
+    
+    $\underline{\mathbb{E}[x]=\mu \quad} \vline$
+    
+    $ $
 
-\begin{tabular}{l}
-\\
-$var[x]=E[x^2]-E[x]^2=\mu^2+\sigma^2-\mu^2$\\
-\\
-$\underline{var[x]=\sigma^2 \quad} \vline$\\
 
-\end{tabular}
+    $ \int_{-\infty}^{\infty}\mathcal{N}(x | \mu, \sigma^2)dx=  \int_{-\infty}^{\infty} \frac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} dx = 1 $
+    
+    $ \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} dx = (2\pi\sigma^2)^{1/2} $
+    
+    $ \frac{d}{d \sigma^2} \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} dx = \frac{d}{d \sigma^2} (2\pi\sigma^2)^{1/2} $
+    
+    $ \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} \left( \frac{-(x-\mu)^2}{2} \cdot (-1) \cdot \frac{1}{\sigma^4} \right) dx = \sqrt{2\pi}\frac{1}{2}(\sigma^2)^{-1/2} $
+    
+    $ \frac{1}{(2\pi\sigma^2)^{1/2}} \int_{-\infty}^{\infty} \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} (x-\mu)^2 dx = \sigma^2 $
+    
+    $\mathbb{E}[(x-\mu)^2] = \sigma^2$
+    
+    Porém,
+    
+    $\mathbb{E}[(x-\mu)^2] = \mathbb{E}[x^2-2x\mu^2+\mu^2] =  \mathbb{E}[x^2]+\mathbb{E}[-2x\mu]+ \mathbb{E}[\mu^2]$
+    
+    $\mathbb{E}[(x-\mu)^2] = \mathbb{E}[x^2]-2\mu\mathbb{E}[x] +\mu^2$
+    
+    $\mathbb{E}[(x-\mu)^2] = \mathbb{E}[x^2]-2\mu^2 +\mu^2 = \mathbb{E}[x^2]-\mu^2$
+    
+    $\mathbb{E}[x^2] =\mu^2 + \underbrace{\mathbb{E}[(x-\mu)^2]}_{\sigma^2}$
+    
+    $\underline{ \mathbb{E}[x^2] =\mu^2 + \sigma^2 \quad} \vline$
+
+    $ $
+
+    $var[x]=E[x^2]-E[x]^2=\mu^2+\sigma^2-\mu^2$
+
+    $\underline{var[x]=\sigma^2 \quad} \vline$
+    
+    $ $
 
 
 \item \textbf{Exercício 1.9} \par
@@ -229,39 +222,34 @@ $$\mathcal{N}(\boldsymbol{x} | \boldsymbol{\mu}, \boldsymbol{\Sigma}^2)= \frac{1
 \begin{itemize}
     \item Para a univariada temos:
     
-    \begin{tabular}{l}
-        \\
-        $\frac{d}{dx} \mathcal{N}(x|\mu,\sigma^2) = \frac{d}{dx} \left( \frac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} \right) = 0$\\
-        \\
-        $\frac{d}{dx} \mathcal{N}(x|\mu,\sigma^2) = \frac{1}{(2\pi\sigma^2)^{1/2}} \left[ \frac{-2(x-\mu)}{2\sigma^2} \right] \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} = \frac{-(x-\mu)}{\sigma^2} \mathcal{N}(x|\mu,\sigma^2) = 0$\\
-        \\
-        Como $\mathcal{N}(x|\mu,\sigma^2) = 0$ só ocorre para $x = \pm \infty$, o ponto de máximo estará em\\
-        \\
-        $x$ tal que $\frac{-(x-\mu)}{\sigma^2} = 0$\\
-        \\
-        $\underline{x=\mu \quad} \vline$\\
-        \\
-    \end{tabular}
+
+        $\frac{d}{dx} \mathcal{N}(x|\mu,\sigma^2) = \frac{d}{dx} \left( \frac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} \right) = 0$
+        
+        $\frac{d}{dx} \mathcal{N}(x|\mu,\sigma^2) = \frac{1}{(2\pi\sigma^2)^{1/2}} \left[ \frac{-2(x-\mu)}{2\sigma^2} \right] \exp\left\{ -\frac{1}{2\sigma^2}(x - \mu)^2 \right\} = \frac{-(x-\mu)}{\sigma^2} \mathcal{N}(x|\mu,\sigma^2) = 0$
+        
+        Como $\mathcal{N}(x|\mu,\sigma^2) = 0$ só ocorre para $x = \pm \infty$, o ponto de máximo estará em
+        
+        $x$ tal que $\frac{-(x-\mu)}{\sigma^2} = 0$
+        
+        $\underline{x=\mu \quad} \vline$
+       
 
     \item De forma análoga, para a multivariada temos:
     
-    \begin{tabular}{l}
-        \\
-        $\frac{d}{dx} \mathcal{N}(\boldsymbol{x} | \boldsymbol{\mu}, \boldsymbol{\Sigma}^2) = \frac{d}{dx} \left( \frac{1}{(2\pi)^{D/2}|\boldsymbol{\Sigma}|^{1/2}}\exp\left\{ -\frac{1}{2}(\boldsymbol{x} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1}(\boldsymbol{x} - \boldsymbol{\mu})  \right\} \right) = \boldsymbol{0}$\\
-        \\
+
+        $\frac{d}{dx} \mathcal{N}(\boldsymbol{x} | \boldsymbol{\mu}, \boldsymbol{\Sigma}^2) = \frac{d}{dx} \left( \frac{1}{(2\pi)^{D/2}|\boldsymbol{\Sigma}|^{1/2}}\exp\left\{ -\frac{1}{2}(\boldsymbol{x} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1}(\boldsymbol{x} - \boldsymbol{\mu})  \right\} \right) = \boldsymbol{0}$
+        
         $\frac{d}{dx} \mathcal{N}(\boldsymbol{x} | \boldsymbol{\mu}, \boldsymbol{\Sigma}^2) = 
         -\frac{1}{2} \mathcal{N}(\boldsymbol{x} | \boldsymbol{\mu}, \boldsymbol{\Sigma}^2) \nabla_x \{(\boldsymbol{x}-\boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\boldsymbol{x}-\boldsymbol{\mu})  \}
-         = \boldsymbol{0}$\\
-        \\
+         = \boldsymbol{0}$
+        
         $\frac{d}{dx} \mathcal{N}(\boldsymbol{x} | \boldsymbol{\mu}, \boldsymbol{\Sigma}^2) = 
         -\mathcal{N}(\boldsymbol{x} | \boldsymbol{\mu}, \boldsymbol{\Sigma}^2) \boldsymbol{\Sigma}^{-1} (\boldsymbol{x}-\boldsymbol{\mu})
-         = \boldsymbol{0}$\\
-        \\
-        $\boldsymbol{x}-\boldsymbol{\mu} = \boldsymbol{0}$\\
-        \\
-        $\underline{\boldsymbol{x}=\boldsymbol{\mu} \quad} \vline$\\
-    \end{tabular}
+         = \boldsymbol{0}$
 
+        $\boldsymbol{x}-\boldsymbol{\mu} = \boldsymbol{0}$
+
+        $\underline{\boldsymbol{x}=\boldsymbol{\mu} \quad} \vline$
 \end{itemize}
 
 \item \textbf{Exercício 1.10} \par
@@ -276,40 +264,34 @@ Suponha que as varáveis $x$ e $z$ são estatisticamente independentes. Mostre q
 \newline \par
 \textbf{Solução:}
 
-\begin{tabular}{l}
-    \\
-    $ \mathbb{E}[x+z] = \displaystyle \int \int p(x,z) (x+z) dx dz $\\
-    \\
-    Se $x$ e $z$ são independentes, $p(x,z) = p(x)p(z)$\\
-    \\
-    $ \mathbb{E}[x+z] = \displaystyle \int \int p(x)p(z) (x+z) dx dz $\\
-    \\
-    $ \mathbb{E}[x+z] = \displaystyle \int \int p(x)p(z) x dx dz +  \int \int p(x)p(z) z dx dz $\\
-    \\
-    $ \mathbb{E}[x+z] = \displaystyle \underbrace{  \int p(z) dz}_1  \int p(x) x dx  +  \underbrace{\int p(x) dx}_1 \int p(z) z dz $\\
-    \\
-    $ \mathbb{E}[x+z] = \displaystyle \int p(x) x dx  +  \int p(z) z dz $\\
-    \\
-    $ \underline{\mathbb{E}[x+z] = \mathbb{E}[x]  +  \mathbb{E}[z] \quad} \vline $\\
-    \\
-\end{tabular}
+    $ \mathbb{E}[x+z] = \displaystyle \int \int p(x,z) (x+z) dx dz $
 
-\begin{tabular}{l}
-    \\
-    $ var[x+z] = \mathbb{E}[(x+z-\mathbb{E}[x+z])^2] = \mathbb{E}[(x-\mathbb{E}[x]+z-\mathbb{E}[z])^2]$\\
-    \\
-    $ var[x+z] = \underbrace{\mathbb{E}[(x-\mathbb{E}[x])^2]}_{var[x]}+\underbrace{\mathbb{E}[(z-\mathbb{E}[z])^2]}_{var[z]}+\underbrace{\mathbb{E}[2(z-\mathbb{E}[z])(x-\mathbb{E}[x])]}_{-2A}$\\
-    \\
-    $A = \displaystyle \int \int (x-\mathbb{E}[x]) (z-\mathbb{E}[z]) p(x)p(z) dx dz$\\
-    \\
-    $A = \displaystyle \int \int xz p(x)p(z) dx dz + \int \int \mathbb{E}[x] \mathbb{E}[z] p(x)p(z) dx dz - \int \int \mathbb{E}[x] z p(x)p(z) dx dz $\\
-    $ \displaystyle  \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad  \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad  \quad \quad \quad \quad \quad - \int \int \mathbb{E}[z] x p(x)p(z) dx dz$\\
+    Se $x$ e $z$ são independentes, $p(x,z) = p(x)p(z)$
+
+    $ \mathbb{E}[x+z] = \displaystyle \int \int p(x)p(z) (x+z) dx dz $
+
+    $ \mathbb{E}[x+z] = \displaystyle \int \int p(x)p(z) x dx dz +  \int \int p(x)p(z) z dx dz $
+
+    $ \mathbb{E}[x+z] = \displaystyle \underbrace{  \int p(z) dz}_1  \int p(x) x dx  +  \underbrace{\int p(x) dx}_1 \int p(z) z dz $
+
+    $ \mathbb{E}[x+z] = \displaystyle \int p(x) x dx  +  \int p(z) z dz $
+
+    $ \underline{\mathbb{E}[x+z] = \mathbb{E}[x]  +  \mathbb{E}[z] \quad} \vline $
+
+    $ var[x+z] = \mathbb{E}[(x+z-\mathbb{E}[x+z])^2] = \mathbb{E}[(x-\mathbb{E}[x]+z-\mathbb{E}[z])^2]$
+    
+    $ var[x+z] = \underbrace{\mathbb{E}[(x-\mathbb{E}[x])^2]}_{var[x]}+\underbrace{\mathbb{E}[(z-\mathbb{E}[z])^2]}_{var[z]}+\underbrace{\mathbb{E}[2(z-\mathbb{E}[z])(x-\mathbb{E}[x])]}_{-2A}$
+    
+    $A = \displaystyle \int \int (x-\mathbb{E}[x]) (z-\mathbb{E}[z]) p(x)p(z) dx dz$
+    
+    $A = \displaystyle \int \int xz p(x)p(z) dx dz + \int \int \mathbb{E}[x] \mathbb{E}[z] p(x)p(z) dx dz - \int \int \mathbb{E}[x] z p(x)p(z) dx dz $
+
+    $ \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad  \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad  \quad \quad \quad \quad \quad\displaystyle  - \int \int \mathbb{E}[z] x p(x)p(z) dx dz$
+
     $A=\mathbb{E}[x]\mathbb{E}[z]+\mathbb{E}[x]\mathbb{E}[z]-\mathbb{E}[x]\mathbb{E}[z]-\mathbb{E}[z]\mathbb{E}[x]=0$
-    \\
-    \\
-    $ \underline{var[x+z]=var[x]+var[z] \quad} \vline $\\
-    \\
-\end{tabular}
+  
+    $ \underline{var[x+z]=var[x]+var[z] \quad} \vline $
+    
 
 \item \textbf{Exercício 1.11} \par
 
@@ -317,29 +299,24 @@ Fazendo as derivadas da função de log-verossimilhança $\ln p (\boldsymbol{x}|
 \newline \par
 \textbf{Solução:}
 
-\begin{tabular}{l}
-    \\
-    $\frac{d}{d\mu}\ln p (\boldsymbol{x}|\mu, \sigma^2) = \frac{d}{d\mu}\left( -\frac{1}{\sigma^2}\sum_{n=1}^{N}(x_n-\mu)^2-\frac{N}{2}\ln \sigma^2 - \frac{N}{2}\ln (2\pi) \right)$\\
-    \\
-    $\frac{1}{2\sigma^2}(-2)\sum_{n=1}^{N}(x_n-\mu) = 0$\\
-    \\
-    $\sum_{n=1}^{N}\mu = \sum_{n=1}^{N}x_n$\\
-    \\
-    $N\mu = \sum_{n=1}^{N}x_n$\\
-    \\
-    $ \underline{\mu_{ML} = \frac{1}{N} \sum_{n=1}^{N}x_n \quad} \vline $\\
-\end{tabular}
+    $\frac{d}{d\mu}\ln p (\boldsymbol{x}|\mu, \sigma^2) = \frac{d}{d\mu}\left( -\frac{1}{\sigma^2}\sum_{n=1}^{N}(x_n-\mu)^2-\frac{N}{2}\ln \sigma^2 - \frac{N}{2}\ln (2\pi) \right)$
+    
+    $\frac{1}{2\sigma^2}(-2)\sum_{n=1}^{N}(x_n-\mu) = 0$
+    
+    $\sum_{n=1}^{N}\mu = \sum_{n=1}^{N}x_n$
+    
+    $N\mu = \sum_{n=1}^{N}x_n$
+    
+    $ \underline{\mu_{ML} = \frac{1}{N} \sum_{n=1}^{N}x_n \quad} \vline $
 
-\begin{tabular}{l}
-    \\
-    $\frac{d}{d\sigma^2}\ln p (\boldsymbol{x}|\mu, \sigma^2) = \frac{d}{d\sigma^2}\left( -\frac{1}{\sigma^2}\sum_{n=1}^{N}(x_n-\mu)^2-\frac{N}{2}\ln \sigma^2 - \frac{N}{2}\ln (2\pi) \right)$\\
-    \\
-    $-\frac{1}{2}\frac{(-1)}{\sigma^4} \sum_{n=1}^{N}(x_n-\mu)^2 - \frac{N}{2}\frac{1}{\sigma^2} = 0 $\\
-    \\
-    $ \frac{N}{\sigma^2}  = \frac{1}{\sigma^4} \sum_{n=1}^{N}(x_n-\mu)^2 $\\
-    \\
-    $ \underline{\sigma_{ML}^2 = \frac{1}{N} \sum_{n=1}^{N}(x_n - \mu_{ML})^2 \quad} \vline $\\
-\end{tabular}
+    
+    $\frac{d}{d\sigma^2}\ln p (\boldsymbol{x}|\mu, \sigma^2) = \frac{d}{d\sigma^2}\left( -\frac{1}{\sigma^2}\sum_{n=1}^{N}(x_n-\mu)^2-\frac{N}{2}\ln \sigma^2 - \frac{N}{2}\ln (2\pi) \right)$
+    
+    $-\frac{1}{2}\frac{(-1)}{\sigma^4} \sum_{n=1}^{N}(x_n-\mu)^2 - \frac{N}{2}\frac{1}{\sigma^2} = 0 $
+    
+    $ \frac{N}{\sigma^2}  = \frac{1}{\sigma^4} \sum_{n=1}^{N}(x_n-\mu)^2 $
+    
+    $ \underline{\sigma_{ML}^2 = \frac{1}{N} \sum_{n=1}^{N}(x_n - \mu_{ML})^2 \quad} \vline $
 
 \item \textbf{Exercício 1.13} \par
 
@@ -347,18 +324,16 @@ Suponha que a variância de uma distribuição Gaussiana seja estimada usando o 
 \newline \par
 \textbf{Solução:}
 
-\begin{tabular}{l}
-    \\
-    $\mathbb{E}[\sigma_{ML}^2]=\mathbb{E}[\frac{1}{N}\sum_{n=1}^{N}(x_n-\mu_{ML})^2] = \frac{1}{N}\mathbb{E}[\sum_{n=1}^{N} \left( x_n^2 - 2 x_n \mu_{ML} + \mu_{ML}^2 \right) ]$\\
-    \\
-    $\mathbb{E}[\sigma_{ML}^2]=\frac{1}{N} \left(\mathbb{E}[\sum_{n=1}^{N}x_n^2]-2\mu\mathbb{E}[\sum_{n=1}^{N}x_n]+\mathbb{E}[\sum_{n=1}^{N} \mu^2]\right) $\\
-    \\
-    $\mathbb{E}[\sigma_{ML}^2]=\frac{1}{N} \left(  N(\mu^2+\sigma^2) -2\mu N \mu + N \mu^2 \right) $\\
-    \\
-    $\mathbb{E}[\sigma_{ML}^2]=\frac{1}{N} \left(  N\mu^2+N\sigma^2 - 2N \mu^2 + N \mu^2 \right) $\\
-    \\
-    $ \underline{\mathbb{E}[\sigma_{ML}^2] = \sigma^2 \quad} \vline $\\
-\end{tabular}
+
+    $\mathbb{E}[\sigma_{ML}^2]=\mathbb{E}[\frac{1}{N}\sum_{n=1}^{N}(x_n-\mu_{ML})^2] = \frac{1}{N}\mathbb{E}[\sum_{n=1}^{N} \left( x_n^2 - 2 x_n \mu_{ML} + \mu_{ML}^2 \right) ]$
+    
+    $\mathbb{E}[\sigma_{ML}^2]=\frac{1}{N} \left(\mathbb{E}[\sum_{n=1}^{N}x_n^2]-2\mu\mathbb{E}[\sum_{n=1}^{N}x_n]+\mathbb{E}[\sum_{n=1}^{N} \mu^2]\right) $
+    
+    $\mathbb{E}[\sigma_{ML}^2]=\frac{1}{N} \left(  N(\mu^2+\sigma^2) -2\mu N \mu + N \mu^2 \right) $
+    
+    $\mathbb{E}[\sigma_{ML}^2]=\frac{1}{N} \left(  N\mu^2+N\sigma^2 - 2N \mu^2 + N \mu^2 \right) $
+
+    $ \underline{\mathbb{E}[\sigma_{ML}^2] = \sigma^2 \quad} \vline $
 
 \item \textbf{Exercício 1.21} \par
 
@@ -369,34 +344,29 @@ Considere dois números não negativos $a$ e $b$, e mostre que, se $a\leq b$, en
 \newline \par
 \textbf{Solução:}
 
-\begin{tabular}{l}
-    \\
-    $a=b \rightarrow a^2 \leq a b \rightarrow \underline{a \leq (a b)^{1/2} \quad} \vline $\\
-    \\
-    $p(erro)=p(x \in R_1, C_2)+p(x \in R_2, C_1)$ \\
-    \\
-    $p(erro)= \displaystyle \int_{R_1} p(x, C_2) dx + \int_{R_2} p(x, C_1) dx$ \\
-    \\
-    Em $R_1$ temos $p(x, C_2) \leq p(x, C_1)$ e em $R_2$ temos $p(x, C_1) \leq p(x, C_2)$ o que resulta em\\
-    \\
+
+    $a=b \rightarrow a^2 \leq a b \rightarrow \underline{a \leq (a b)^{1/2} \quad} \vline $
+    
+    $p(erro)=p(x \in R_1, C_2)+p(x \in R_2, C_1)$ 
+    
+    $p(erro)= \displaystyle \int_{R_1} p(x, C_2) dx + \int_{R_2} p(x, C_1) dx$ 
+    
+    Em $R_1$ temos $p(x, C_2) \leq p(x, C_1)$ e em $R_2$ temos $p(x, C_1) \leq p(x, C_2)$ o que resulta em
+    
     $\begin{cases}
         \displaystyle \int_{R_1} p(x, C_2) dx \leq \int_{R_1} \left\{p(x, C_1)p(x, C_2)\right\}^{1/2} dx \\
         \\
         \displaystyle \int_{R_2} p(x, C_1) dx \leq \int_{R_2} \left\{p(x, C_1)p(x, C_2)\right\}^{1/2} dx\\
-    \end{cases}$\\
-    \\
-    Então\\
-    \\
+    \end{cases}$
+    
+    Então
+    
     $p(erro) \leq \displaystyle \int_{R_1} \left\{p(x, C_1)p(x, C_2)\right\}^{1/2} dx + \int_{R_2} \left\{p(x, C_1)p(x, C_2)\right\}^{1/2} dx$ \\
-    \\
-    Como os integrandos são iguais e as regiões são complementares, podemos unir as \\
-    duas integrais para todo o domínio\\
-    \\
-    $\underline{p(erro) \leq \displaystyle \int \left\{p(x, C_1)p(x, C_2)\right\}^{1/2} dx \quad} \vline $\\
-    \\
-\end{tabular}
-
-
+    
+    Como os integrandos são iguais e as regiões são complementares, podemos unir as duas integrais para todo o domínio
+    
+    $\underline{p(erro) \leq \displaystyle \int \left\{p(x, C_1)p(x, C_2)\right\}^{1/2} dx \quad} \vline $
+    
 
 \item \textbf{Exercício 1.22} \par
 
@@ -404,9 +374,25 @@ Dada uma matriz de perda com elementos $L_{kj}$, o risco esperado é minimizado 
 \newline \par
 \textbf{Solução:}
 
-\begin{tabular}{l}
-    
-\end{tabular}
+$\mathbb{E}[L]=\sum_{K}L_{kj}p(C_k | x)$
+
+Se $L_{kj}=1-I_{kj}$
+
+$\mathbb{E}[L]=\sum_{K}(1-I_{kj})p(C_k | x)$
+
+$\mathbb{E}[L]=\sum_{K}p(C_k | x) - \sum_{K}I_{kj}p(C_k | x)$
+
+$\mathbb{E}[L]=1 - \sum_{K}I_{kj}p(C_k | x)$
+
+$\begin{cases}
+    \text{se }k=j \rightarrow \mathbb{E}[L]=1 - p(C_j | x)\\
+    \text{se }k\neq j \rightarrow \mathbb{E}[L]=1 \\
+\end{cases}$
+
+
+Para minimizar $\mathbb{E}[L]$ devemos escolher a classe $C_j$ com a maior probabilidade $p(C_j|x)$.
+
+A matriz de perdas da forma $L_{kj} = 1 - I_{kj}$ atribui o mesmo peso, de valor 1, para todos os erros de classificação.\\
 
 \item \textbf{Exercício 1.23} \par
 
